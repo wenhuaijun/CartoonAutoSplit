@@ -28,17 +28,56 @@
     android:scaleType="centerCrop"
     android:layout_centerInParent="true"
     android:visibility="invisible"
+
     />
+    <View
+        android:id="@+id/vertical_view"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light"
+        android:layout_marginLeft="32dp"
+        android:visibility="gone"
+        android:clickable="true"
+        />
+    <View
+        android:id="@+id/horizontal_view"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@android:color/holo_orange_light"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:visibility="gone"
+        />
+    <Button
+        android:id="@+id/btn2"
+        android:text="手动切割漫画"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
     <Button
         android:id="@+id/btn1"
         android:text="自动切割漫画"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_above="@+id/btn2"
+        android:layout_marginBottom="4dp"
 
         />
+    <Button
+        android:id="@+id/btn3"
+        android:text="切割"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+
+        />
+
     <TextView
         android:id="@+id/tip"
         android:text="1/4"
