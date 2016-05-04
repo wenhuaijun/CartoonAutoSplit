@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.boycy815.pinchimageview.PinchImageView;
+import com.pnikosis.materialishprogress.ProgressWheel;
 import com.wenhuaijun.cartoonautosplit.R;
 import com.wenhuaijun.cartoonautosplit.imageLoader.EasyImageLoader;
 import com.wenhuaijun.cartoonautosplit.imageLoader.MD5Utils;
@@ -36,6 +37,7 @@ public class FullscreenActivity extends AppCompatActivity implements View.OnClic
     private MyViewPager adapter;
     private String url;
     private Handler handler;
+    private ProgressWheel progressWheel;
 
 
 
@@ -45,6 +47,7 @@ public class FullscreenActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_fullscreen);
         url =getIntent().getStringExtra("url");
         pinchImageView = (PinchImageView)findViewById(R.id.imageView);
+        progressWheel =(ProgressWheel)findViewById(R.id.progress_wheel);
         tip = (TextView)findViewById(R.id.tip);
         viewPager =(PinchImageViewPager)findViewById(R.id.pager);
         btn1 =(Button)findViewById(R.id.btn1);
@@ -65,6 +68,7 @@ public class FullscreenActivity extends AppCompatActivity implements View.OnClic
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        progressWheel.setVisibility(View.GONE);
                         pinchImageView.setVisibility(View.VISIBLE);
 
                     }
